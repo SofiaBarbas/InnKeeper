@@ -104,6 +104,7 @@ body {
   overflow-y: auto;
 }
 
+
 /*header*/
 header {
   display: flex;
@@ -142,13 +143,13 @@ header form button {
 }
 
 /*botones de Notificaciones y Perfil*/
-header > div {
+.personales {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-header > div > button {
+.personales button {
   background: var(--cards);
   border: none;
   border-radius: 50%;
@@ -163,7 +164,175 @@ header > div > button {
   transition: transform 0.2s;
 }
 
-header > div > button:hover {
+.personales button:hover {
   transform: scale(1.05);
 }
 
+/*para el boton de "Iniciar Sesion"*/
+.perfil button {
+  background: var(--sidebar-titulos);
+  color: var(--background);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+
+/*main*/
+main {
+  padding: 0 40px 40px 40px;
+  flex: 1;
+}
+
+main h1 {
+  color: var(--sidebar-titulos);
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+main > section > p {
+  color: var(--texto-secundario);
+  margin-bottom: 24px;
+}
+
+h3 {
+  color: var(--sidebar-titulos);
+  font-size: 20px;
+  margin-bottom: 16px;
+  margin-top: 32px;
+}
+
+/*diseño de las cards base*/
+article {
+  background-color: var(--cards);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/*para ver las estadisticas debajo del titulo principal*/
+/*convierte la primera sección en una grilla para las 3 tarjetas*/
+section:nth-of-type(1) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+section:nth-of-type(1) h1, 
+section:nth-of-type(1) > p {
+  grid-column: 1 / -1;
+  /*hace que el título ocupe todo el ancho arriba*/
+}
+
+section:nth-of-type(1) article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-bottom: 4px solid var(--botones-contraste);
+}
+
+section:nth-of-type(1) article svg {
+  color: var(--botones-contraste);
+  margin-bottom: 16px;
+}
+
+section:nth-of-type(1) article h4 {
+  color: var(--texto-secundario);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+section:nth-of-type(1) article p {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--sidebar-titulos);
+}
+
+/*seccion de partidas activas*/
+section:nth-of-type(2) article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid var(--sidebar-titulos);
+}
+
+section:nth-of-type(2) article > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+section:nth-of-type(2) article h4 {
+  font-size: 18px;
+  color: var(--texto-principal);
+}
+
+section:nth-of-type(2) article p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--texto-secundario);
+  font-size: 14px;
+}
+
+section:nth-of-type(2) article svg {
+  color: var(--botones-contraste);
+  width: 18px;
+  height: 18px;
+}
+
+section:nth-of-type(2) button {
+  background-color: transparent;
+  color: var(--botones-contraste);
+  border: 2px solid var(--botones-contraste);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+section:nth-of-type(2) button:hover {
+  background-color: var(--botones-contraste);
+  color: var(--cards);
+}
+
+/*seccion de juegos recientes*/
+section:nth-of-type(3) article {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 200px;
+  gap: 8px;
+}
+
+section:nth-of-type(3) article h5 {
+  font-size: 16px;
+  color: var(--sidebar-titulos);
+  margin-top: 8px;
+}
+
+section:nth-of-type(3) article p {
+  font-size: 13px;
+  color: var(--texto-secundario);
+}
+
+
+/*footer*/
+footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--texto-secundario);
+  font-size: 14px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
