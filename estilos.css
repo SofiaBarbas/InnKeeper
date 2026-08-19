@@ -1,0 +1,169 @@
+:root {
+ --background:#F4F1EA;
+ --texto-principal:#2C3E50;
+ --texto-secundario:#606F7B;
+ --sidebar-titulos:#1B4332;
+ --botones-contraste:#D48C29;
+ --cards:#FFFFFF;
+
+}
+
+/*reseteo y tipografia base*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--texto-principal);
+}
+
+/*estructura principal de la pagina*/
+.layout-de-la-app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/*sidebar*/
+.sidebar {
+  width: 260px;
+  background-color: var(--sidebar-titulos);
+  color: var(--background);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-logo h2 {
+  color: var(--botones-contraste);
+  font-size: 28px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+/*para el boton "Nueva Partida" en el sidebar*/
+.contenedor-logo button {
+  width: 100%;
+  background-color: var(--botones-contraste);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  transition: background-color 0.3s;
+}
+
+.contenedor-logo button:hover {
+  background-color: #b8761d;
+}
+
+/*para el nav del sidebar*/
+.contenedor-logo nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contenedor-logo nav a {
+  text-decoration: none;
+  color: var(--background);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.contenedor-logo nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--botones-contraste);
+  opacity: 1;
+}
+
+
+
+/* --- ahora todo lo de la derecha --- */
+.columna.derecha {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/*header*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  background-color: transparent;
+}
+
+/*para el buscador*/
+header form {
+  display: flex;
+  align-items: center;
+  background-color: var(--cards);
+  border-radius: 20px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+header input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 4px 8px;
+  width: 250px;
+  color: var(--texto-principal);
+}
+
+header form button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--botones-contraste);
+  display: flex;
+  align-items: center;
+}
+
+/*botones de Notificaciones y Perfil*/
+header > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+header > div > button {
+  background: var(--cards);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sidebar-titulos);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+header > div > button:hover {
+  transform: scale(1.05);
+}
+
