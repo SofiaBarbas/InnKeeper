@@ -29,7 +29,7 @@ body {
 
 /*sidebar*/
 .sidebar {
-  width: 260px;
+  width: 220px;
   background-color: var(--sidebar-titulos);
   color: var(--background);
   padding: 32px 24px;
@@ -57,10 +57,16 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
+  justify-content:left;
+  gap:8px; /*más espacio para equilibrar el ícono y la M*/
   margin-bottom: 40px;
   transition: background-color 0.3s;
+  line-height: 1; /*para que el texto el mismo alto que el ícono*/
+}
+
+/*para que ícono SVG no se deforme */
+.contenedor-logo button svg {
+  flex-shrink: 0; 
 }
 
 .contenedor-logo button:hover {
@@ -129,7 +135,7 @@ header input {
   outline: none;
   background: transparent;
   padding: 4px 8px;
-  width: 250px;
+  width: 200px;
   color: var(--texto-principal);
 }
 
@@ -146,7 +152,7 @@ header form button {
 .personales {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
 }
 
 .personales button {
@@ -170,6 +176,7 @@ header form button {
 
 /*para el boton de "Iniciar Sesion"*/
 .perfil button {
+  width: 150px;
   background: var(--sidebar-titulos);
   color: var(--background);
   border: none;
@@ -181,6 +188,8 @@ header form button {
   font-weight: 500;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  white-space: nowrap; /*para que el texto no salte a la segunda línea*/
+  flex-shrink: 0;      /*asi el boton no se achica si la pantalla es mas chica*/
 }
 
 
